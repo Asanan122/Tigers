@@ -1,0 +1,15 @@
+Analysis Summary:
+================
+
+Total Genes: 21954.00
+Genes With Variants: 0.00
+Highly Variable Genes: 0.00
+Conserved Genes: 21954.00
+Average Variation: 0.00
+Median Variation: 0.00
+Max Variation: 0.00
+Unique Caspian Total: 0.00
+Unique Amur Total: 0.00
+Shared Variants Total: 0.00
+Total Snps: 0.00
+Total Indels: 0.00

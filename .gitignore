@@ -1,0 +1,36 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Pipeline noise (regenerated)
+variant_analysis.log
+fasterq.tmp.*/
+
+# Large / local-only (do not push to GitHub — tens of GB)
+data/
+gatk-4.4.0.0/
+gatk-4.4.0.0.zip
+tools/snpEff/
+
+# Stale root config (use tools/snpEff/snpEff.config from setup_snpeff_db.py)
+/snpEff.config
+
+# Results outputs (BAMs, VCFs, huge CSVs, etc.)
+/results/*
+!/results/manuscript.md
+!/results/analysis_summary.txt
