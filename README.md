@@ -6,6 +6,14 @@
 
 This repository is a **practical whole-genome resequencing workflow** for two public SRA samples, **Caspian** (*P. t. virgata*, SRR18572400) and **Amur** (*P. t. altaica*, SRR31485304), aligned to a *Panthera tigris* reference. It does not claim population-level inference from *N* = 1 per lineage; it **does** provide a defensible pipeline and documented outputs for comparative nuclear variation. See **[RESULTS.md](RESULTS.md)** for headline statistics from completed runs.
 
+### Narrative and quantitative outputs (tracked under `results/`)
+
+GitHub’s file browser often de-emphasizes folders that are mostly gitignored. These **are in the repo** — use the links below or open `results/` in the tree:
+
+- **[results/manuscript.md](results/manuscript.md)** — draft write-up of variant results and discussion  
+- **[results/analysis_summary.txt](results/analysis_summary.txt)** — full numeric summary (joint VCF stats, QUAL, contigs, genotypes)  
+- **[results/README.md](results/README.md)** — index of what is tracked here vs generated locally  
+
 ## Variant calling: GATK and bcftools
 
 Two callers appear on purpose:
@@ -21,6 +29,7 @@ Joint downstream summaries (e.g. `analyze_and_visualize.py`) assume a **joint VC
 |-----|---------|
 | **[RESULTS.md](RESULTS.md)** | Headline findings and where plots live (visible without large `data/` or `results/` on disk) |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | End-to-end run order, commands, expected artifacts, rough runtimes |
+| **[results/README.md](results/README.md)** | Index of tracked files under `results/` (manuscript + analysis summary) |
 
 ## Public data sources (recreate from scratch)
 
@@ -124,6 +133,18 @@ Run Python from the **repository root** unless a script documents otherwise.
 
 Large paths are **gitignored** (`data/`, most of `results/`, bundled GATK, `tools/snpEff/`). **RESULTS.md** carries summary statistics so the repository still reads as a **study**, not only a script dump. After clone, restore data locally and re-run or copy outputs per **CONTRIBUTING.md**.
 
+**`chromosome_mapping.txt`** (repo root) is a **contig whitelist** for `compare_tiger_genomes.py`: one scaffold / seqname per line (see the `#` comments at the top). It is not a rename map.
+
+## Suggested GitHub topics
+
+**Settings → General → Topics:**  
+`genomics`, `bioinformatics`, `conservation-biology`, `conservation-genomics`, `variant-calling`, `panthera-tigris`, `tiger`, `gatk`, `bcftools`, `python`, `whole-genome-sequencing`, `endangered-species`
+
+## Suggested GitHub “About” description
+
+**Settings → General** → edit **Description** (profile + search snippet):
+
+`Whole-genome resequencing pipeline comparing Caspian and Amur tiger subspecies (Panthera tigris): BWA alignment, GATK / bcftools variant calling, SnpEff annotation, and comparative genomics in Python.`
 
 ---
 
