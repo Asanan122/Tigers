@@ -87,11 +87,6 @@ Run Python from the **repository root** unless a script documents otherwise.
 
 Large paths are **gitignored** (`data/`, most of `results/`, bundled GATK, `tools/snpEff/`). **RESULTS.md** carries summary statistics so the repository still reads as a **study**, not only a script dump. After clone, restore data locally and re-run or copy outputs per **CONTRIBUTING.md**.
 
-## Suggested GitHub topics
-
-Add under **Settings → General → Topics** (improves discoverability):
-
-`genomics`, `bioinformatics`, `conservation-biology`, `conservation-genomics`, `variant-calling`, `panthera-tigris`, `tiger`, `gatk`, `bcftools`, `python`, `whole-genome-sequencing`, `endangered-species`
 
 ---
 
