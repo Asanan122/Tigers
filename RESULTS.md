@@ -1,6 +1,6 @@
 # Results summary — Caspian vs Amur nuclear WGS
 
-This file summarizes **headline outputs** from completed pipeline runs so the repository remains interpretable without cloning multi-gigabyte `data/` or `results/`. Raw VCFs, BAMs, and large CSVs stay local (see `.gitignore`).
+This file summarizes **headline outputs** from completed pipeline runs so the repository remains interpretable without cloning multi-gigabyte `data/` or `results/`. Raw VCFs, BAMs, and large CSVs stay local (see `.gitignore`). 
 
 ## Study design (brief)
 
