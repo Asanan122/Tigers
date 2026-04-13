@@ -4,7 +4,7 @@
 
 *Panthera tigris* subspecies are among the clearest examples of **intraspecific genomic structure in endangered megafauna**: geographically separated lineages that share a species-level identity but carry distinct allele frequencies, histories of drift and selection, and conservation-relevant diversity. **Understanding what distinguishes living subspecies at the DNA level** is the same class of problem as comparing an extant relative to a **de-extinction or genetic-rescue proxy**: you need reproducible alignment, variant calling, and interpretation against a reference, with explicit uncertainty.
 
-This repository is a **practical whole-genome resequencing workflow** for two public SRA samples — **Caspian** (*P. t. virgata*, SRR18572400) and **Amur** (*P. t. altaica*, SRR31485304) — aligned to a *Panthera tigris* reference. It does not claim population-level inference from *N* = 1 per lineage; it **does** provide a defensible pipeline and documented outputs for comparative nuclear variation. See **[RESULTS.md](RESULTS.md)** for headline statistics from completed runs.
+This repository is a **practical whole-genome resequencing workflow** for two public SRA samples — **Caspian** (*P. t. virgata*, SRR18572400) and **Amur** (*P. t. altaica*, SRR31485304), aligned to a *Panthera tigris* reference. It does not claim population-level inference from *N* = 1 per lineage; it **does** provide a defensible pipeline and documented outputs for comparative nuclear variation. See **[RESULTS.md](RESULTS.md)** for headline statistics from completed runs.
 
 ## Variant calling: GATK and bcftools
 
