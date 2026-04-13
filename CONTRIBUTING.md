@@ -1,6 +1,6 @@
 # Contributing & running from scratch
 
-This guide is for **anyone** (including future you) who needs to run or extend the pipeline. Run commands from the **repository root** unless noted.
+This guide is for **anyone** (including future you) who needs to run or extend the pipeline. Run commands from the **repository root** unless noted. 
 
 ## Prerequisites
 
