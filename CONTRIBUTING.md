@@ -19,6 +19,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Always **`source venv/bin/activate`** before `python scripts/...`. The repo pins **numpy 2.x** for `cyvcf2`; installing that into **Anaconda base** often conflicts with Conda’s **scipy / numba / gensim** (many builds expect an older numpy). Keep Tigers isolated in `venv/`, or use a dedicated Conda environment *only* for this project with matching pins.
+
 ## 2. Reference and reads
 
 - **Reference:** use `scripts/download_reference.py` or place `data/reference/panthera_tigris.fasta` (and indexes) per your workflow.

@@ -46,6 +46,8 @@ source venv/bin/activate    # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+**Use this venv for every project command** (`python scripts/...`). If you `pip install` into **base Conda** instead, you can upgrade **numpy** and break other Conda packages (scipy, numba, gensim, etc.). If that already happened, reinstall those packages in Conda or create a fresh Conda env for non-Tigers work.
+
 Dependencies are **pinned to exact versions** for reproducibility. To refresh after upgrading Python or packages intentionally:
 
 ```bash
@@ -76,6 +78,7 @@ pip freeze > requirements.txt   # only when you mean to change pins project-wide
 | `call_variants.sh` | bcftools mpileup / call |
 | `prepare_resources.sh` | Sequence dictionary, reference index |
 | `compare_genomes.py`, `compare_tiger_genomes.py` | Pairwise comparison, gene-level plots (see `variant_analysis.log` in CWD) |
+| `analysis_summary_report.py` | Writes `results/analysis_summary.txt` (joint VCF stats, QUAL, contigs, diploid genotypes) |
 | `analyze_and_visualize.py`, `detailed_analysis.py` | Summaries and plots → `results/analysis/` |
 | `annotate_variants.py` | SnpEff download / annotate |
 | `setup_snpeff_db.py` | Panthera tigris SnpEff DB layout + config |

@@ -10,6 +10,7 @@ import numpy as np
 from typing import Dict, List, Tuple
 import gzip
 import glob
+import sys
 
 # Set up logging
 logging.basicConfig(
@@ -358,12 +359,13 @@ def main():
         # Save results
         results_df.to_csv(os.path.join('results', 'tiger_comparison.csv'), index=False)
         
-        # Save summary
-        with open(os.path.join('results', 'analysis_summary.txt'), 'w') as f:
-            f.write("Analysis Summary:\n")
-            f.write("================\n\n")
-            for key, value in summary.items():
-                f.write(f"{key.replace('_', ' ').title()}: {value:.2f}\n")
+        # Quantitative report (joint VCF + cached pipeline text + gene table below)
+        _scripts_dir = os.path.dirname(os.path.abspath(__file__))
+        if _scripts_dir not in sys.path:
+            sys.path.insert(0, _scripts_dir)
+        from analysis_summary_report import write_comprehensive_analysis_summary
+
+        write_comprehensive_analysis_summary(gene_summary=summary)
         
         # Generate plots
         plot_variation_distribution(results_df, 'results')

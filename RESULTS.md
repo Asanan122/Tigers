@@ -9,7 +9,15 @@ This file summarizes **headline outputs** from completed pipeline runs so the re
 
 ## Headline variant statistics
 
-Source: `results/analysis/variant_statistics.txt` (from `scripts/analyze_and_visualize.py` on joint `results/variants/final.vcf.gz`).
+**Primary quantitative report:** `results/analysis_summary.txt` — regenerate anytime with:
+
+```bash
+python scripts/analysis_summary_report.py
+```
+
+That file merges a full pass over the joint VCF (QUAL, contigs, diploid genotype patterns) with cached `results/analysis/*.txt` outputs where present.
+
+Legacy table (from `scripts/analyze_and_visualize.py`; sample column labels may not match VCF order — see note inside `analysis_summary.txt`):
 
 | Metric | Value | Notes |
 |--------|------:|-------|

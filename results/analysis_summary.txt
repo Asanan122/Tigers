@@ -1,15 +1,102 @@
-Analysis Summary:
-================
+==============================================================================
+TIGER WGS — QUANTITATIVE ANALYSIS SUMMARY
+==============================================================================
+Generated: 2026-04-13 00:12 UTC
 
-Total Genes: 21954.00
-Genes With Variants: 0.00
-Highly Variable Genes: 0.00
-Conserved Genes: 21954.00
-Average Variation: 0.00
-Median Variation: 0.00
-Max Variation: 0.00
-Unique Caspian Total: 0.00
-Unique Amur Total: 0.00
-Shared Variants Total: 0.00
-Total Snps: 0.00
-Total Indels: 0.00
+1. JOINT CALL SET (single pass over VCF)
+------------------------------------------------------------------------------
+  VCF path: /Users/batlogin/Desktop/Tigers/results/variants/final.vcf.gz
+  Sample index 0: amur
+  Sample index 1: caspian
+
+  Total variant records: 2,169,502
+  Contigs with ≥1 record: 1,151
+  SNPs (len(ref)==len(alt)==1): 1,919,574
+  Deletions: 135,398
+  Insertions: 114,467
+  Other / complex length classes: 63
+
+2. QUALITY AND FILTER
+------------------------------------------------------------------------------
+  Records with PASS (or empty FILTER): 2,072,048 (95.51%)
+  QUAL (numeric): mean=98.99, median=49.56, stdev=852.93
+  QUAL percentiles: p10=32.41, p90=92.41
+
+3. GENOTYPE PATTERNS (diploid; labels follow VCF sample order)
+------------------------------------------------------------------------------
+  Sites with a call in BOTH samples: 73,119 (3.37% of rows)
+  Called only in amur: 2,008,535 (92.58%)
+  Called only in caspian: 87,848 (4.05%)
+  Missing / uncalled in BOTH: 0 (0.00%)
+
+  Among sites with BOTH samples called:
+    Same genotype (allele pair): 5,927
+    Both homozygous reference: 0
+    Both homozygous alternate: 6,111
+    Both heterozygous: 271
+    Opposite homozygous (ref vs alt), diploid-aware: 42,426 — contrast where one sample is hom-REF and the other hom-ALT (both called)
+    (Legacy `analyze_and_visualize.py` reported 'Homozygous Differences: 194' using only the first cyvcf2 allele index per sample and an assumed sample order; use the line above for diploid biology.)
+
+  Per-sample genotype counts (rows where that sample is called):
+    amur: called=2,081,654, hom_ref=32,494, hom_alt=1,257,830, het=791,330
+    caspian: called=160,967, hom_ref=32,062, hom_alt=86,532, het=42,373
+
+4. TOP CONTIGS BY VARIANT COUNT
+------------------------------------------------------------------------------
+  KE722155.1: 40,733
+  KE721728.1: 21,800
+  KE722266.1: 20,922
+  KE722120.1: 20,289
+  KE721706.1: 19,813
+  KE721714.1: 19,632
+  KE721838.1: 18,378
+  KE722181.1: 17,868
+  KE722206.1: 16,960
+  KE721800.1: 16,901
+  KE722261.1: 16,873
+  KE721849.1: 16,719
+  KE721753.1: 16,012
+  KE722345.1: 15,907
+  KE721717.1: 15,450
+
+OBSERVATION — asymmetry in 'called in one sample only':
+  Large one-sided missingness usually reflects coverage, batch, or joint
+  genotyping rather than biological 'private subspecies SNPs' alone.
+  Interpret opposite-homozygous counts as pairwise contrast among called sites.
+
+5. CACHED TEXT SUMMARIES (from prior analyze_and_visualize / detailed_analysis)
+------------------------------------------------------------------------------
+  NOTE: `analyze_and_visualize.py` hard-codes genotype column 0 = 'CASPIAN' and 1 = 'AMUR'.
+  This project's `final.vcf.gz` sample order is ['amur','caspian'], so pasted labels in
+  variant_statistics.txt do NOT match VCF order — trust Section 3 for named-sample counts.
+
+variant_statistics.txt:
+Variant Analysis Statistics
+=========================
+
+Total Variants: 2,169,502
+Shared Variants: 73,119
+Caspian Unique Variants: 2,008,535
+Amur Unique Variants: 87,848
+Homozygous Differences: 194
+
+detailed_statistics.txt:
+Detailed Variant Analysis Statistics
+==================================
+
+total_variants: 2,169,502
+snps: 1,919,574
+insertions: 114,467
+deletions: 135,398
+shared_variants: 6,382
+caspian_unique: 2,163,120
+amur_unique: 2,163,120
+high_impact_variants: 0
+
+6. GENE-LEVEL OVERLAP (optional; separate per-sample VCF + GFF path)
+------------------------------------------------------------------------------
+  Not merged into this run. For gene windows vs per-sample VCFs, run:
+    python scripts/compare_tiger_genomes.py
+  (Requires GFF/VCF contig naming consistency or chromosome_mapping.txt fixes.)
+
+==============================================================================
