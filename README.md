@@ -22,6 +22,40 @@ Joint downstream summaries (e.g. `analyze_and_visualize.py`) assume a **joint VC
 | **[RESULTS.md](RESULTS.md)** | Headline findings and where plots live (visible without large `data/` or `results/` on disk) |
 | **[CONTRIBUTING.md](CONTRIBUTING.md)** | End-to-end run order, commands, expected artifacts, rough runtimes |
 
+## Public data sources (recreate from scratch)
+
+All inputs are public; nothing in this workflow depends on private files.
+
+### Whole-genome sequencing reads (NCBI SRA)
+
+| Subspecies (lineage) | Run accession | NCBI SRA record |
+|----------------------|---------------|-----------------|
+| Caspian (*P. t. virgata*) | **SRR18572400** | [SRR18572400](https://www.ncbi.nlm.nih.gov/sra/SRR18572400) |
+| Amur (*P. t. altaica*) | **SRR31485304** | [SRR31485304](https://www.ncbi.nlm.nih.gov/sra/SRR31485304) |
+
+**Fetch locally:** install [SRA Toolkit](https://github.com/ncbi/sra-tools/wiki/01.-Downloading-SRA-Toolkit), then either run `python scripts/download_genomes.py` (uses `fasterq-dump` into `data/caspian/` and `data/amur/`) or manually:
+
+```bash
+prefetch SRR18572400 SRR31485304
+fasterq-dump --progress --outdir data/caspian SRR18572400
+fasterq-dump --progress --outdir data/amur    SRR31485304
+```
+
+Paired-end layout and metadata for library prep are on the SRA run pages above.
+
+### Reference genome and index (Ensembl — *Panthera tigris altaica*, PanTig1.0)
+
+The bundled downloader uses **Ensembl release 110** toplevel DNA for **Amur tiger** assembly **PanTig1.0** (same species reference used for read alignment in this project):
+
+- **FASTA (gzip):** [Panthera_tigris_altaica.PanTig1.0.dna.toplevel.fa.gz](http://ftp.ensembl.org/pub/release-110/fasta/panthera_tigris_altaica/dna/Panthera_tigris_altaica.PanTig1.0.dna.toplevel.fa.gz)
+- **Species / assembly hub:** [Ensembl *Panthera tigris altaica*](https://www.ensembl.org/Panthera_tigris_altaica/Info/Index)
+
+**Fetch locally:** `python scripts/download_reference.py` writes `data/reference/panthera_tigris.fasta` (decompressed). Then index with BWA / `samtools faidx` / GATK `CreateSequenceDictionary` as in **CONTRIBUTING.md**.
+
+### Annotation (GFF / genes)
+
+Gene models and GFF used in this repo were aligned to the **same reference build** as the FASTA above (check contig names against your VCF before SnpEff). If you need a fresh annotation package, use **Ensembl** for PanTig1.0 or **[NCBI Datasets](https://www.ncbi.nlm.nih.gov/datasets/)** for the matching *Panthera tigris* assembly — **contig naming must match** between FASTA, BAM, VCF, and GFF or downstream scripts will show empty gene overlap.
+
 ## Repository layout
 
 ```
