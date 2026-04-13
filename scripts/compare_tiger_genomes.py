@@ -134,9 +134,9 @@ def load_chromosome_mapping(mapping_file: str) -> Dict[str, str]:
         with open(mapping_file, 'r') as f:
             for line in f:
                 chrom = line.strip()
-                if chrom:
-                    # Map both ways
-                    mapping[chrom] = chrom
+                if not chrom or chrom.startswith('#'):
+                    continue
+                mapping[chrom] = chrom
         logging.info(f"Loaded {len(mapping)} chromosome mappings")
         return mapping
     except Exception as e:

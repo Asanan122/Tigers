@@ -1,3 +1,5 @@
+# Reference sequence names (NCBI scaffold / contig IDs, e.g. ATCQ01000001.1) for the *Panthera tigris* assembly used when scripts/compare_tiger_genomes.py overlaps GFF genes with VCF variants.
+# This is not a from→to translation table: each line maps to itself (identity) so analysis is limited to contigs explicitly listed here, matching GFF and VCF seqnames when conventions align.
 ATCQ01000001.1
 ATCQ01000009.1
 ATCQ01000010.1
