@@ -34,5 +34,6 @@ tools/snpEff/
 
 # Results outputs (BAMs, VCFs, huge CSVs, etc.)
 /results/*
+!/results/README.md
 !/results/manuscript.md
 !/results/analysis_summary.txt
