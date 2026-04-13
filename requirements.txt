@@ -1,5 +1,6 @@
-# Pinned for reproducibility (pip freeze). Python 3.11+ recommended.
-# Recreate: python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
+# Fully pinned: every direct + transitive dependency uses == (no open-ended >= floors).
+# Regenerate pins only intentionally: pip freeze > requirements.txt after a controlled upgrade.
+# Python 3.11+ recommended. Recreate env: python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 argcomplete==3.6.3
 argh==0.31.3
 biopython==1.87
@@ -25,7 +26,7 @@ pyparsing==3.3.2
 pysam==0.23.3
 python-dateutil==2.9.0.post0
 requests==2.33.1
-seaborn==0.13.2 
+seaborn==0.13.2
 simplejson==3.20.2
 six==1.17.0
 tqdm==4.67.3
