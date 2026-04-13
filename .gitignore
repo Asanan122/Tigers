@@ -22,6 +22,7 @@ Thumbs.db
 variant_analysis.log
 fasterq.tmp.*/
 
+
 # Large / local-only (do not push to GitHub — tens of GB)
 data/
 gatk-4.4.0.0/
